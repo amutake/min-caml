@@ -1,5 +1,5 @@
 # Sumii's Makefile for Min-Caml (for GNU Make)
-# 
+#
 # ack.mlなどのテストプログラムをtest/に用意してmake do_testを実行すると、
 # min-camlとocamlでコンパイル・実行した結果を自動で比較します。
 
@@ -28,10 +28,11 @@ main.mli main.ml
 
 # ↓テストプログラムが増えたら、これも増やす
 TESTS = print sum-tail gcd sum fib ack even-odd \
-adder funcomp cls-rec cls-bug cls-bug2 \
-shuffle spill spill2 spill3 join-stack join-stack2 join-stack3 \
-join-reg join-reg2 non-tail-if non-tail-if2 \
-inprod inprod-rec inprod-loop matmul matmul-flat
+	adder funcomp cls-rec cls-bug cls-bug2 \
+	spill spill2 spill3 join-stack join-stack2 join-stack3 \
+	join-reg join-reg2 non-tail-if non-tail-if2 \
+	inprod inprod-rec inprod-loop
+# shuffle matmul matmul-flat
 
 do_test: $(TESTS:%=test/%.cmp)
 
